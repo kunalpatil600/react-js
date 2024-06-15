@@ -1,4 +1,6 @@
-
+// // This code is a basic React application that displays a
+//  simple web page featuring BMW content. The application is 
+//  divided into three main components: Header, Content, and Footer.
 const Header = () => {
     return (
 
