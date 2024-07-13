@@ -1,5 +1,10 @@
+// // This JSX code defines the structure of the form and its elements.
+// // Each input element is controlled by the React state (formData), 
+// with their value attribute bound to the respective state property 
+// and their onChange event handled by handleChange.// The form includes fields for name, 
+// email, password, a dropdown for grade selection, and radio buttons for gender selection.
+// // When the form is submitted, it triggers the handleSubmit function.
 import React, { useState } from 'react';
-
 let initialState = {
   name: "",
   email: "",
