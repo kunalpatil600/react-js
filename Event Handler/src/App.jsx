@@ -1,3 +1,8 @@
+// The App component maintains a list of posts in its state.
+// When the "GET POSTS" button is clicked, the FetchData function
+//  is called, which fetches data from an API and updates the state with the fetched posts.
+// The posts are then displayed by mapping over the posts array and rendering a Post component for each post.
+
 import React, { useState } from 'react';
 import Post from './Post';
 import './App.css';
