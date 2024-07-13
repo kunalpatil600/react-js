@@ -1,3 +1,8 @@
+// This React component (App) demonstrates basic usage of state management 
+// (useState), event handling (onClick), conditional rendering based on state
+//  (isPrime and isComposite functions), and inline styling to create a simple
+//   counter application with additional mathematical checks.
+
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
