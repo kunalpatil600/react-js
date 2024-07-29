@@ -48,6 +48,7 @@ const Login = () => {
       </div>
       <button type="submit" className='mt-3 m-auto d-block fw-bold text-white' style={{backgroundColor:"blue", border:"none", borderRadius:"10px", padding:"3px 10px "}}>LOGIN</button>
     </form>
+    <p>email:eve.holt@reqres.in</p>
     </div>
     </div>
   );
