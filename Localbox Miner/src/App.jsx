@@ -1,3 +1,8 @@
+// Context Setup: ThemeContext is created and provides theme and toggleTheme.
+// ThemeProvider: Wraps the App component allowing it to access the theme and toggleTheme function.
+// App Component: Uses theme to style the application and renders the Btn component.
+// Btn Component: When the button is clicked, it calls toggleTheme to switch the theme between light and dark.
+
 import { useContext } from 'react';
 import { ThemeContext } from './ThemeContext'; 
 import Btn from './Btn';
