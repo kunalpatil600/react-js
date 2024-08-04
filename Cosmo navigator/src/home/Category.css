@@ -1,0 +1,36 @@
+
+.sliderimg {
+     width: 451px;
+    height: 451px;
+    
+}
+.sliderimg2 {
+    width: 451px;
+    height: 451px;
+} 
+
+.products-images
+{
+    display: none;
+    position: absolute;
+}
+.products-images-main 
+{
+   position: relative;
+   cursor: pointer;
+   width: 451px;
+   height: 451px;
+   display: flex;
+   justify-content: space-around;
+   transition:3s;
+}
+.products-images-main img
+{
+    transition:  1s; 
+}
+
+.products-images-main:hover .products-images
+{
+    display: block;
+   
+}

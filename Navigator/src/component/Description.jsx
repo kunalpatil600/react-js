@@ -15,10 +15,13 @@ const Description = () => {
     <div >
       <Navbar/>
       <div className="text-center mt-5 pt-3">
-      <img src={singlepagedata.image} alt="" className='col-2 mb-3' />
-      <h3>{singlepagedata.title}</h3>
-      <h5>{singlepagedata.price}</h5>
-      <h6 className='col-4  m-auto'>{singlepagedata.description} </h6>
+        {
+          singlepagedata.map((el)=>(
+            <div key={el.id}>
+               <img src={el.image[2]} alt="" />
+            </div>
+          ))
+        }
       </div>
     </div>
   )
