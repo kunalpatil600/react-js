@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom'
 
 const Description = () => {
     const [singlePageData, setSinglePageData] = useState(null)
-    const [data3,setdata3]=useState([])
+    const [data3, setdata3] = useState([])
     const { id } = useParams()
 
     useEffect(() => {
@@ -62,10 +62,20 @@ const Description = () => {
             .catch((err) => {
                 console.log(err)
             })
-      
+
     }, [id])
+    const handleAddToCart = () => {
+        if (singlePageData) {
+          axios.post("http://localhost:3000/cart", singlePageData)
+            .then((res) => console.log(res.data))
+            .catch((err) => console.log(err));
+        } else {
+          console.log("No data available to add to cart");
+        }
+      };
+
     const [selectedSize, setSelectedSize] = useState('LG');
-    axios.get("http://localhost:3000/product3").then((res)=>{setdata3(res.data)})
+    axios.get("http://localhost:3000/product3").then((res) => { setdata3(res.data) })
     const sizes = ['SM', 'MD', 'LG', 'XL', '2X'];
     return (
         <div>
@@ -114,24 +124,21 @@ const Description = () => {
                         </div>
                         <div className="additional-text mt-3 ">Size : {selectedSize}</div>
                     </div>
-                 <Link to={"/cart"} style={{textDecoration:"none"}}>   <button class="cssbuttons-io-button col-10 mt-5 ">
-                        Add TO Cart
-                        <div class="icon">
-                            <svg
-                                height="24"
-                                width="24"
-                                viewBox="0 0 24 24"
-                                xmlns="http://www.w3.org/2000/svg"
-                            >
-                                <path d="M0 0h24v24H0z" fill="none"></path>
-                                <path
-                                    d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"
-                                    fill="currentColor"
-                                ></path>
-                            </svg>
-                        </div>
-                    </button>
-                    </Link>
+                  
+                        {/* <Link to={`/cart}`} style={{ textDecoration: "none" }}> */}
+                        <button onClick={handleAddToCart}>
+                            <button className="cssbuttons-io-button col-10 mt-5">
+                                Add TO Cart
+                                <div className="icon">
+                                    <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M0 0h24v24H0z" fill="none"></path>
+                                        <path d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z" fill="currentColor"></path>
+                                    </svg>
+                                </div>
+                            </button>
+                            </button>
+                        {/* </Link> */}
+                    
                     <div className="d-flex mt-3 col-11 justify-content-between" >
                         <div className="d-flex">
                             <img src="https://cdn11.bigcommerce.com/s-2nze2/images/stencil/original/image-manager/warranty-insulation-badges-life-warranty-icon.png" className='col-3' alt="" />
@@ -176,52 +183,52 @@ const Description = () => {
                             <Accordion.Item eventKey="2" className='mt-2' style={{ border: "none" }}>
                                 <Accordion.Header > <span className='fw-bold'>MATERIALS   </span></Accordion.Header>
                                 <Accordion.Body>
-                                 <ul>
-                                    <li>Temperature Rating: 20°F / -6.67°C</li>
-                                    <li>ISO Comfort Rating: 34°F / -1.6°C</li>
-                                    <li>ISO Limit Rating: 23°F / -5°C</li>
-                                    <li>Weight: 3 lb / 1.37 kg</li>
-                                    <li>Fill Weight: 40 oz / 1133.98 g</li>
-                                <li>Fits To: 72" / 182.88 cm</li>
-                                <li>Length: 78" / 198.12 cm</li>
-                                <li>Shoulder Circumference: 60" / 147.32 cm</li>
-                                <li>Stuff Sack Size: 7.5 x 15 in / 19 x 38 cm</li>
-                                
-                                 </ul>
+                                    <ul>
+                                        <li>Temperature Rating: 20°F / -6.67°C</li>
+                                        <li>ISO Comfort Rating: 34°F / -1.6°C</li>
+                                        <li>ISO Limit Rating: 23°F / -5°C</li>
+                                        <li>Weight: 3 lb / 1.37 kg</li>
+                                        <li>Fill Weight: 40 oz / 1133.98 g</li>
+                                        <li>Fits To: 72" / 182.88 cm</li>
+                                        <li>Length: 78" / 198.12 cm</li>
+                                        <li>Shoulder Circumference: 60" / 147.32 cm</li>
+                                        <li>Stuff Sack Size: 7.5 x 15 in / 19 x 38 cm</li>
+
+                                    </ul>
                                 </Accordion.Body>
                                 <hr className='m-0' />
                             </Accordion.Item>
                         </Accordion>
 
                     </div>
-                                  
+
                 </div>
             </div>
             <div className="mt-5 pt-4">
-        <h1 className='fw-bold ms-5 ps-5  d-inline'>NEW ARRIVALS   </h1> <span className='fw-bold'>/ SHOP ALL</span>
-        </div>
-            <div className="d-flex w-90 ms-5 pb-4  mb-5 ps-4 slider-slide " style={{ overflowX: "scroll" }}>
-          {
-            data3.map((el) => (
-              <div className='marl ms-4 mt-5 ' key={el.id}>
-              {/* <Link to={`/description/${el.id}`}>    */}
-                <div className="products-images-main">
-                  <img src={el.image[0]} alt="" className='sliderimg2 col-12' />
-                  <div className="products-images text-center w-100 h-100">
-                    <img src={el.hover} alt="" className='sliderimg' />
-                  </div>
-                </div>
-              {/* </Link> */}
-              <div className="d-flex pb-2 mt-2 justify-content-between col-12">
-                <h4 className='d-inline fw-bold'>{el.title}</h4>
-                <h5 className='d-inline'>${el.price}</h5>
-              </div>
+                <h1 className='fw-bold ms-5 ps-5  d-inline'>NEW ARRIVALS   </h1> <span className='fw-bold'>/ SHOP ALL</span>
             </div>
-            ))
-          }
+            <div className="d-flex w-90 ms-5 pb-4  mb-5 ps-4 slider-slide " style={{ overflowX: "scroll" }}>
+                {
+                    data3.map((el) => (
+                        <div className='marl ms-4 mt-5 ' key={el.id}>
+                            {/* <Link to={`/description/${el.id}`}>    */}
+                            <div className="products-images-main">
+                                <img src={el.image[0]} alt="" className='sliderimg2 col-12' />
+                                <div className="products-images text-center w-100 h-100">
+                                    <img src={el.hover} alt="" className='sliderimg' />
+                                </div>
+                            </div>
+                            {/* </Link> */}
+                            <div className="d-flex pb-2 mt-2 justify-content-between col-12">
+                                <h4 className='d-inline fw-bold'>{el.title}</h4>
+                                <h5 className='d-inline'>${el.price}</h5>
+                            </div>
+                        </div>
+                    ))
+                }
 
-        </div>
-         <Footer/>
+            </div>
+            <Footer />
         </div>
     )
 }

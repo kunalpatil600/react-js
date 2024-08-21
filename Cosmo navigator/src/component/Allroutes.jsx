@@ -5,9 +5,9 @@ import Find from '../home/Find';
 import Category from '../home/Category';
 import Description from './Description';
 import New from '../home/New';
-import Cart from './Cart';
 import Login from './Login';
-import Privatepage from './Privatepage';
+import Privatepage from './Privatepage'
+import Cart from './Cart'
 
 const Allroutes = () => {
   return (
@@ -18,7 +18,7 @@ const Allroutes = () => {
         <Route path="/category/:category" element={<Category />} />
         <Route path="/description/:id" element={<Privatepage><Description /></Privatepage>} />
         <Route path="/new" element={<New />} />
-        <Route path="/cart" element={<Cart />} />
+      <Route path='/cart' element={<Cart/>}></Route>
         <Route path="/login" element={<Login />} />
       </Routes>
     </div>

@@ -42,24 +42,24 @@ const Category = () => {
     <div>
       <Navbar/>
       <div>
-        <img src="https://sierradesigns.com/images/stencil/original/image-manager/default-plp.jpg" alt="" className="col-12" />
+        <img src="https://sierradesigns.com/images/stencil/original/image-manager/default-plp.jpg" alt="" className="col-12 imagecategory" />
       </div>
       <div>
-        <div className="col-11 m-auto mt-5 pt-3">
-       <h3 className='fw-bold'>JACKETS & VESTS </h3>
+        <div className="col-11 m-auto mt-5  pt-3">
+       <h3 className='fw-bold '>JACKETS & VESTS </h3>
        <p>No matter the conditions, Sierra Designs men's jackets are ready for any adventure you can dream up. Innovative Fireball synthetic down and DriDown hydrophobic down help to battle the coldest conditions. All our men's jackets are state-of-the-art, functional, and look pretty damn good.</p>
        </div>
-        <div className="d-flex flex-wrap col-11 m-auto  justify-content-between">
+        <div className="d-flex flex-wrap col-11 col-lg-11 col-md-12 m-auto  justify-content-between">
       {
             data.map((el) => (
              
-              <div className='marl mt-4' key={el.id}>
+              <div className='marl3 mt-4' key={el.id}>
               <div className="">
-                <Link to={`/description/${el.id}`}>
-                <div className="products-images-main">
-                  <img src={el.image} alt="" className='sliderimg2 ' />
+                <Link to={`/description/${el.id}`} className='col-sm-1'>
+                <div className="products-images-main3">
+                  <img src={el.image} alt="" className='sliderimg23 ' />
                   <div className="products-images w-100 h-100" >
-                    <img src={el.hover} alt="" className='sliderimg  ' />
+                    <img src={el.hover} alt="" className='sliderimg5 ' />
                   </div>
                 </div>
                 </Link>
@@ -74,17 +74,17 @@ const Category = () => {
           }
  </div>
  <h2 className='fw-bold fs-3 ms-5 ps-3 mt-5'> WIND & RAINWEAR </h2>
- <div className="d-flex flex-wrap justify-content-between col-11 m-auto ">
+ <div className="d-flex flex-wrap  justify-content-between col-lg-11  m-auto ">
       {
             data2.map((el) => (
              
-              <div className='marl  mt-4' key={el.id}>
+              <div className='marl3  mt-4' key={el.id}>
               <div className="">
                 <Link to={`/description/${el.id}`}>
-                <div className="products-images-main">
-                  <img src={el.image} alt="" className='sliderimg2' />
+                <div className="products-images-main3">
+                  <img src={el.image} alt="" className='sliderimg23' />
                   <div className="products-images w-100  h-100" >
-                    <img src={el.hover} alt="" className='sliderimg ' />
+                    <img src={el.hover} alt="" className='sliderimg5 ' />
                   </div>
                 </div>
                 </Link>
@@ -99,17 +99,17 @@ const Category = () => {
           }
  </div>
  <h2 className='fw-bold fs-3 ms-5 ps-3 mt-5'> TOP </h2>
- <div className="d-flex flex-wrap justify-content-between  col-11 m-auto">
+ <div className="d-flex flex-wrap    col-11 col-md-12 m-auto col-lg-11 justify-content-between">
       {
             data3.map((el) => (
              
-              <div className='marl mt-4 ' key={el.id}>
+              <div className='marl3 mt-4 ' key={el.id}>
               <div className="">
                 <Link to={`/description/${el.id}`}>
-                <div className="products-images-main">
-                  <img src={el.image} alt="" className='sliderimg2 '  />
+                <div className="products-images-main3">
+                  <img src={el.image} alt="" className='sliderimg23 '  />
                   <div className="products-images w-100 h-100" >
-                    <img src={el.hover} alt="" className='sliderimg ' />
+                    <img src={el.hover} alt="" className='sliderimg5 ' />
                   </div>
                 </div>
                 </Link>
@@ -124,7 +124,7 @@ const Category = () => {
           }
  </div>
       </div>
-      <Footer/>
+      {/* <Footer/> */}
     </div>
   );
 };

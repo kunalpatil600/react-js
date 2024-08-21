@@ -13,12 +13,18 @@ const Navbar = () => {
 
   return (
     <div className="mb-5  pb-4">
-      <div className="fixed-top " style={{ backgroundColor: "#241F1F", borderBottom:"3px solid yellow" }}>
+      <div className="fixed-top" style={{ backgroundColor: "#241F1F", borderBottom:"3px solid yellow" }}>
         <Container className='pt-0  p-0'>
-          <div className='d-flex  col-12 justify-content-between' style={{ alignItems: "center" }}>
+          
+          <div className='d-flex navbar navbar-expand-lg  col-12 justify-content-around' style={{ alignItems: "center" }}>
+          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop"
+            aria-controls="offcanvasTop">
+            <span class="navbar-toggler-icon"><i class="bi bi-list fs-1"></i></span>
+          </button>
             <Link to={"/"} className='col-2'> <img src={logo} alt="" className='col-12' /></Link>
-            <div className="col-5">
-              <ul className='d-flex mt-4 justify-content-between list-unstyled'>
+          
+            <div className=" collapse col-4  navbar-collapse">
+              <ul className='d-flex col-10   mt-4 justify-content-between list-unstyled'>
                 <li className="navbarlink"> <Link className='navbarlink pb-5 fs-5'>SHOP</Link>
                   <div className="drop">
                     <div className="d-flex mt-4 mb-4 hii">
@@ -81,17 +87,44 @@ const Navbar = () => {
                 <li>  <Link  className='navbarlink fs-5'>SALE </Link></li>
               </ul>
             </div>
-            <div className="pt-3 mb-2 pb-0" style={{ borderBottom: "2px solid white" }}>
+            <div className="collapse navbar-collapse col-1">
+            <div className="pt-3   mb-2 pb-0" style={{ borderBottom: "2px solid white" }}>
               <input type="text" name="" id="" style={{ backgroundColor: "#241F1F", color: 'white', border: "none", outline: "none" }} placeholder='SEARCH' />
               <a href="" style={{ textDecoration: "none" }}>  <i className="bi bi-search-heart text-white fs-5"></i></a>
             </div>
+            </div>
             <div className="pt-2">
            <Link to={"/login"}>   <i className="bi bi-person-arms-up text-white fw-bold fs-3 pe-4"></i></Link>
-              <i className="bi bi-shop-window text-white fw-bold fs-3 "></i>
+           <Link to={"/cart"}><i className="bi bi-shop-window text-white fw-bold fs-3 "></i></Link>
             </div>
           </div>
         </Container>
+        <div class="offcanvas offcanvas-top h-50" tabindex="-1" id="offcanvasTop" aria-labelledby="offcanvasTopLabel">
+          <div class="offcanvas-header">
+            <h5 id="offcanvasTopLabel">navigation </h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <div class="col-12 d-flex container justify-content-between ps-5">
+              <ul class=" list-unstyled   mt-2 ps-lg-0" >
+                  <li class="nav-item "><a href="" class="nav-link  text-dark fw-bold">COLLABS</a></li>
+                  <li class="nav-item"><a href="shoes.html" class="nav-link  text-dark fw-bold">BASKETS</a></li>
+                  <li class="nav-item"><a href="" class="nav-link text-dark  fw-bold">LOOKBOOK</a></li>
+                  <li class="nav-item"><a href="" class="nav-link text-dark  fw-bold">MANIFESTE</a></li>
+                  <li class="nav-item"><a href="" class="nav-link text-dark  fw-bold">OUTLET</a></li>
+              </ul>
+              <ul class="list-unstyled ">
+                  <li class="nav-item "><a href="" class="nav-link  fw-bold"><i class="bi bi-search text-dark fs-4"></i></a></li>
+                  <li class="nav-item"><a href="" class="nav-link  fw-bold"><i class="bi bi-geo-alt text-dark fs-4"></i></a></li>
+                  <li class="nav-item"><a href="" class="nav-link  fw-bold"><i class="bi bi-heart text-dark  fs-4"></i></a></li>
+                  <li class="nav-item "><a href="form.html" class="nav-link  fw-bold"><i class="bi bi-person text-dark fs-4"></i></a></li>
+                  <li class="nav-item"><a href="add.html" target="_blank" class="nav-link  fw-bold" ><i class="bi bi-bag text-dark fs-4"></i></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </div>
+      
     </div>
   )
 }
