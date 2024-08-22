@@ -1,15 +1,20 @@
+// This React app handles user authentication using Firebase.It allows users 
+// to sign up or log in with email/password or Google,and only authenticated
+//  users can access the product page, which displays items fetched from a 
+//   fake store API. The Privetpage component protects routes, redirecting 
+//  users to the login page. The Allroutes component defines the app's navigation.
 import React, { useState } from 'react';
 import Navbar from './Navbar';
 import GoogleButton from 'react-google-button';
 import { signInWithPopup, createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
 import { auth, provider } from '../Firebase';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { getAuth,signOut } from 'firebase/auth';
+import { getAuth, signOut } from 'firebase/auth';
 const Loginpage = () => {
   const [user] = useAuthState(auth);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [isNewUser, setIsNewUser] = useState(false); 
+  const [isNewUser, setIsNewUser] = useState(false);
 
   const handleGoogleLogin = () => {
     signInWithPopup(auth, provider)
@@ -26,8 +31,8 @@ const Loginpage = () => {
         alert('User signed up:', res)
       })
       .catch((err) => console.log(err.message),
-    alert("pls check our email or password")
-    );
+        alert("pls check our email or password")
+      );
   };
 
   // Email/Password Login
@@ -38,14 +43,14 @@ const Loginpage = () => {
         alert('User logged in:', res)
       })
       .catch((err) => console.log(err.message));
-      alert("pls try")
+    alert("pls try")
   };
-  
+
   const handleSignOut = () => {
-  signOut(auth)
-  .then((res)=>alert(" Sign-out successful."))
-  .catch((err)=>alert("An error happened"))
-}
+    signOut(auth)
+      .then((res) => alert(" Sign-out successful."))
+      .catch((err) => alert("An error happened"))
+  }
   return (
     <div>
       <Navbar />
@@ -68,7 +73,7 @@ const Loginpage = () => {
             onChange={(e) => setPassword(e.target.value)}
             className="form-control my-2"
           />
-          {isNewUser ? (<button className="btn btn-primary" onClick={handleSignup}>Sign Up</button>) : ( <button className="btn btn-primary" onClick={handleLogin}>Log In</button>
+          {isNewUser ? (<button className="btn btn-primary" onClick={handleSignup}>Sign Up</button>) : (<button className="btn btn-primary" onClick={handleLogin}>Log In</button>
           )}
           <div className="mt-3">
             <p onClick={() => setIsNewUser(!isNewUser)} style={{ cursor: 'pointer' }}>
@@ -77,7 +82,7 @@ const Loginpage = () => {
           </div>
         </div>
       </div>
-      
+
       {user && (
         <div className="user-info mt-5 text-center">
           <img src={user.photoURL} alt="User Avatar" style={{ borderRadius: "50%" }} />

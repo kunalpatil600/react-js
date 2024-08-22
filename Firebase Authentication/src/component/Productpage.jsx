@@ -19,10 +19,7 @@ const Productpage = () => {
               <p>{el.price}</p>
               <p>{el.description.substring(0, 100)}</p>
               <p>{el.category}</p>
-              {/* <Link to={`/edit/${el.id}`}>
-                <button>Edit</button>
-              </Link> */}
-              {/* <button onClick={() => { handledelete(el.id) }}>Delete</button> */}
+            
             </div>
           ))
         }
