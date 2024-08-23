@@ -1,3 +1,10 @@
+
+// This React application integrates Firebase for Google Sign-In authentication 
+// and displays products fetched from an API. It initializes Firebase with a
+//  given configuration, sets up authentication with Google as the provider, 
+//  and allows users to sign in using Google. After signing in, the user's details
+//   are displayed on the login page. The Productpage fetches and displays products
+//    from a fake store API, and routing is handled using React Router to navigate between pages.
 import React from 'react'
 import Navbar from './Navbar'
 import GoogleButton from 'react-google-button'
