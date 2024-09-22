@@ -1,3 +1,11 @@
+// This code sets up a React application with routing and authentication 
+// using React Router and context. It includes components like Login, Dashboard,
+//  and SingleProductPage that fetch data using axios and display it conditionally
+//   based on authentication state. The AuthContext provides login and logout 
+//   functionality, while PrivateRoute ensures that protected routes are only 
+//   accessible to authenticated users. The ProductsTable and ProductCard components 
+//   render product data in a table, with individual product details linked to the 
+//   SingleProductPage. Finally, a Loader component handles loading states.
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../Context/AuthContext";
 import ProductsTable from "../Components/ProductsTable";
